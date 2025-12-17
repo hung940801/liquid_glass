@@ -1,0 +1,481 @@
+:root {
+  --lg-shadow: 0 6px 6px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.1);
+  --lg-spring: cubic-bezier(0.175, 0.885, 0.32, 2.2);
+}
+
+.lg {
+  --lg-radius: 1.5rem;
+  --lg-blur: 3px;
+  --lg-tint: rgba(255, 255, 255, 0.25);
+  --lg-fg: black;
+
+  position: relative;
+  display: flex;
+  overflow: hidden;
+
+  font-weight: 600;
+  color: var(--lg-fg);
+  background: transparent;
+  border: 0;
+  border-radius: var(--lg-radius);
+  box-shadow: var(--lg-shadow);
+
+  transition: all 0.4s var(--lg-spring);
+}
+
+.lg__effect,
+.lg__tint,
+.lg__shine {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--lg-radius);
+  pointer-events: none;
+}
+
+.lg__effect {
+  z-index: 0;
+  overflow: hidden;
+  isolation: isolate;
+
+  opacity: 1;
+  transition: opacity 560ms ease-out;
+
+  -webkit-backdrop-filter: blur(var(--lg-blur));
+  backdrop-filter: blur(var(--lg-blur));
+  /* filter: url(#lg-glass-distortion); */
+}
+
+.lg__tint {
+  z-index: 1;
+  background: var(--lg-tint);
+}
+
+.lg__shine {
+  z-index: 2;
+  overflow: hidden;
+  box-shadow: inset 2px 2px 1px 0 rgba(255, 255, 255, 0.5),
+    inset -1px -1px 1px 1px rgba(255, 255, 255, 0.5);
+}
+
+.lg__content {
+  z-index: 3;
+  position: relative;
+}
+
+.lg--interactive {
+  cursor: pointer;
+}
+
+.lg--menu {
+  padding: 0.4rem;
+  --lg-radius: 1.8rem;
+}
+
+.lg--menu:hover {
+  padding: 0.6rem;
+}
+
+.lgMenu {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.lgMenu--row {
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+}
+
+.lgMenu__item {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  font: inherit;
+  text-align: left;
+  width: 100%;
+
+  font-size: 20px;
+  color: white;
+  padding: 0.4rem 0.6rem;
+  border-radius: 0.8rem;
+  cursor: pointer;
+  transition: all 0.1s ease-in;
+}
+
+.lgMenu--row .lgMenu__item {
+  width: auto;
+  white-space: nowrap;
+}
+
+.lgMenu__item:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+  box-shadow: inset -2px -2px 2px rgba(0, 0, 0, 0.1);
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+}
+
+.lgMenu__item:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.85);
+  outline-offset: 2px;
+}
+
+.lgMenu__item:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.lgMenu__item:disabled:hover {
+  background: transparent;
+  box-shadow: none;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
+.lg--dock {
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 1rem;
+  --lg-radius: 2rem;
+}
+
+.lg--dock:hover {
+  padding: 1.2rem;
+  --lg-radius: 2.5rem;
+}
+
+.lgDock {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.lgDock__item {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  border-radius: 0.9rem;
+  cursor: pointer;
+
+  width: var(--lg-dock-icon-size, 75px);
+  height: var(--lg-dock-icon-size, 75px);
+
+  display: grid;
+  place-items: center;
+
+  transition: all 0.4s var(--lg-spring);
+}
+
+.lgDock__item:hover {
+  transform: scale(0.95);
+  transform-origin: center center;
+}
+
+.lgDock__item:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.lgDock__item:disabled:hover {
+  transform: none;
+}
+
+.lg--button {
+  padding: 1.5rem 2.5rem;
+  --lg-radius: 3rem;
+  font-size: 1.25rem;
+}
+
+.lg--button:hover {
+  padding: 1.8rem 2.8rem;
+  --lg-radius: 4rem;
+}
+
+.lg--button.lgButton--sm {
+  padding: 0.85rem 1.2rem;
+  --lg-radius: 2.25rem;
+  font-size: 1rem;
+}
+
+.lg--button.lgButton--sm:hover {
+  padding: 1rem 1.35rem;
+  --lg-radius: 2.75rem;
+}
+
+.lg--button .lg__content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s var(--lg-spring);
+}
+
+.lg--button:hover .lg__content {
+  transform: scale(0.95);
+}
+
+.lg--button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.lg--button:disabled .lg__content {
+  transform: none;
+}
+
+.lg--button:disabled:hover {
+  padding: 1.5rem 2.5rem;
+  --lg-radius: 3rem;
+}
+
+.lg--button.lgButton--sm:disabled:hover {
+  padding: 0.85rem 1.2rem;
+  --lg-radius: 2.25rem;
+}
+
+.lg--card {
+  padding: 1rem 1.1rem;
+  --lg-radius: 1.75rem;
+  --lg-fg: rgba(255, 255, 255, 0.92);
+  --lg-tint: rgba(255, 255, 255, 0.12);
+}
+
+.lg--card:hover {
+  transform: translateY(-1px);
+}
+
+.lgCard {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.lgCard__header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.lgCard__title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.lgCard__subtitle {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  font-weight: 500;
+}
+
+.lgCard__body {
+  font-size: 0.95rem;
+  opacity: 0.92;
+}
+
+.lgCard__footer {
+  margin-top: 0.2rem;
+  opacity: 0.85;
+}
+
+.lgCards {
+  width: min(520px, 100%);
+}
+
+.lgCards--row {
+  width: 100%;
+}
+
+.lgCards__toolbar {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 12px;
+}
+
+.lgCards__listContainer {
+  width: 100%;
+}
+
+.lgCards__list {
+  display: grid;
+  gap: 12px;
+}
+
+.lgCards--row .lgCards__list {
+  grid-auto-flow: column;
+  grid-auto-columns: 240px;
+  width: max-content;
+}
+
+.lgCards--row .lgCards__card {
+  scroll-snap-align: start;
+  max-width: 240px;
+}
+
+.lgCards--up .lgCard--splitNew {
+  transform-origin: center top;
+}
+
+.lgCards--down .lgCard--splitNew {
+  transform-origin: center bottom;
+}
+
+.lgCards--left .lgCard--splitNew {
+  transform-origin: left center;
+}
+
+.lgCards--right .lgCard--splitNew {
+  transform-origin: right center;
+}
+
+@keyframes lgDropToCardFromTop {
+  0% {
+    opacity: 0;
+    clip-path: inset(6% 42% 72% 42% round 999px);
+    transform: translateZ(0) scale(0.78);
+  }
+  45% {
+    opacity: 1;
+    clip-path: inset(2% 36% 60% 36% round 999px);
+    transform: translateZ(0) scale(0.92);
+  }
+  100% {
+    opacity: 1;
+    clip-path: inset(0 0 0 0 round var(--lg-radius));
+    transform: translateZ(0) scale(1);
+  }
+}
+
+.lgCards--up .lgCard--splitNew {
+  animation-name: lgDropToCardFromBottom;
+}
+
+.lgCards--down .lgCard--splitNew {
+  animation-name: lgDropToCardFromTop;
+}
+
+.lgCards--right .lgCard--splitNew {
+  animation-name: lgDropToCardFromLeft;
+}
+
+.lgCards--left .lgCard--splitNew {
+  animation-name: lgDropToCardFromRight;
+}
+
+@keyframes lgDropToCardFromBottom {
+  0% {
+    opacity: 0;
+    clip-path: inset(72% 42% 6% 42% round 999px);
+    transform: translateZ(0) scale(0.78);
+  }
+  45% {
+    opacity: 1;
+    clip-path: inset(60% 36% 2% 36% round 999px);
+    transform: translateZ(0) scale(0.92);
+  }
+  100% {
+    opacity: 1;
+    clip-path: inset(0 0 0 0 round var(--lg-radius));
+    transform: translateZ(0) scale(1);
+  }
+}
+
+@keyframes lgDropToCardFromLeft {
+  0% {
+    opacity: 0;
+    clip-path: inset(42% 72% 42% 6% round 999px);
+    transform: translateZ(0) scale(0.78);
+  }
+  45% {
+    opacity: 1;
+    clip-path: inset(36% 60% 36% 2% round 999px);
+    transform: translateZ(0) scale(0.92);
+  }
+  100% {
+    opacity: 1;
+    clip-path: inset(0 0 0 0 round var(--lg-radius));
+    transform: translateZ(0) scale(1);
+  }
+}
+
+@keyframes lgDropToCardFromRight {
+  0% {
+    opacity: 0;
+    clip-path: inset(42% 6% 42% 72% round 999px);
+    transform: translateZ(0) scale(0.78);
+  }
+  45% {
+    opacity: 1;
+    clip-path: inset(36% 2% 36% 60% round 999px);
+    transform: translateZ(0) scale(0.92);
+  }
+  100% {
+    opacity: 1;
+    clip-path: inset(0 0 0 0 round var(--lg-radius));
+    transform: translateZ(0) scale(1);
+  }
+}
+
+.lgCard--splitNewPrep {
+  opacity: 0;
+}
+
+.lgCard--splitNew {
+  will-change: clip-path, opacity, transform;
+  transform-origin: center;
+  z-index: 5;
+  animation: lgDropToCardFromTop 520ms cubic-bezier(1, 0, 0.4, 1);
+  contain: layout paint;
+}
+
+.lgCard--splitNew .lg__content {
+  opacity: 0;
+  animation: lgCardContentFadeIn 520ms cubic-bezier(1, 0, 0.4, 1) both;
+}
+
+.lgCard--splitNew .lg__effect {
+  opacity: 0;
+}
+
+@keyframes lgCardContentFadeIn {
+  0% {
+    opacity: 0;
+  }
+  45% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.lg:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.65);
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lg,
+  .lg__effect,
+  .lg__content,
+  .lgMenu__item,
+  .lgDock__item {
+    transition: none;
+  }
+
+  .lgCard--splitNew {
+    animation: none;
+  }
+
+  .lgCard--splitNew .lg__content {
+    opacity: 1;
+    animation: none;
+  }
+
+  .lgCard--splitNew .lg__effect {
+    opacity: 1;
+    animation: none;
+  }
+}
