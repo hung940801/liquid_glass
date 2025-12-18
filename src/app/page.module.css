@@ -1,0 +1,127 @@
+.demo {
+  width: min(1100px, 100%);
+  padding: 3rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.demo__top {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.demo__stack {
+  display: flex;
+  gap: 60px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.demo__section {
+  display: flex;
+  gap: 25px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.demo__sectionTitle {
+  font-size: 28px;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.demoLists {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.demoLists__cols {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.demoLists__rows {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  align-items: start;
+}
+
+.demoLists__panel {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.demoLists__panel--wide {
+  max-width: 1100px;
+}
+
+.demoLists__heading {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.75);
+  text-align: left;
+}
+
+.demoListYContainer {
+  height: 400px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 6px;
+}
+
+.demoListYContainer .lgCards__card {
+  height: 120px;
+  overflow: hidden;
+}
+
+.demoListXContainer {
+  width: 1100px;
+  min-width: 1100px;
+  max-width: 1100px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 8px;
+}
+
+.demoListXContainer .lgCards__list {
+  overflow-x: visible;
+}
+
+.demoIcon {
+  width: 100%;
+  height: 100%;
+  border-radius: 18px;
+  display: grid;
+  place-items: center;
+
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.92);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.32),
+    rgba(255, 255, 255, 0.06)
+  );
+  box-shadow: inset 1px 1px 1px rgba(255, 255, 255, 0.35),
+    inset -1px -1px 1px rgba(0, 0, 0, 0.25);
+}
+
+@media (max-width: 900px) {
+  .demoLists__cols {
+    grid-template-columns: 1fr;
+  }
+}
+
