@@ -1,13 +1,13 @@
 # Liquid Glass Components (React)
 
-Reusable “liquid glass” UI primitives/components (inspired by `src/codepen_tmp/codepen_src_1.*`).
+Reusable “liquid glass” UI primitives/components.
 
 - Source: `src/liquid-glass/*`
 - Stylesheet: `src/liquid-glass/liquid-glass.css`
 
 ## Usage (in this repo)
 
-- CSS is imported once in `src/app/layout.tsx`.
+- Global CSS is imported once in `src/app/layout.tsx`.
 - Use components:
 
 ```tsx

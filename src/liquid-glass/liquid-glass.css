@@ -481,8 +481,8 @@
   cursor: pointer;
 
   position: absolute;
-  top: 14px;
-  right: 14px;
+  top: 0px;
+  right: 0px;
   opacity: 0;
   transform: translateZ(0) scale(0.98);
   transition: opacity 220ms ease-out, transform 220ms ease-out,
@@ -646,6 +646,10 @@
 
 .lg--card.lgPopup:hover {
   padding: 1.3rem 1.1rem;
+  scale: initial;
+}
+
+.lg--card.lgPopupModal:hover {
   scale: initial;
 }
 
