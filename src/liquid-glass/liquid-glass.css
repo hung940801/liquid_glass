@@ -69,6 +69,13 @@
 .lg--menu {
   padding: 0.4rem;
   --lg-radius: 1.8rem;
+  --lg-tint: rgba(255, 255, 255, 0.14);
+  --lg-blur: 8px;
+}
+
+.lg--menu .lg__effect {
+  -webkit-backdrop-filter: blur(var(--lg-blur)) saturate(150%);
+  backdrop-filter: blur(var(--lg-blur)) saturate(150%);
 }
 
 .lg--menu:hover {

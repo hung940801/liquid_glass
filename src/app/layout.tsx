@@ -1,7 +1,6 @@
 import type { ReactNode } from 'react'
 
-import '../index.css'
-import '../App.css'
+import './globals.css'
 import '../liquid-glass/liquid-glass.css'
 
 export const metadata = {
