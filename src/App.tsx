@@ -8,6 +8,7 @@ import {
   LiquidGlassExpandableBox,
   LiquidGlassMenu,
   LiquidGlassPopupBox,
+  LiquidGlassStaticCards,
   LiquidGlassSwitcherMenu,
 } from './liquid-glass'
 
@@ -21,14 +22,14 @@ function App() {
 
   const [selectedMenuId, setSelectedMenuId] = useState(menuItems[0]?.id ?? 'home')
 
-  const dockItems = [
-    { id: 'finder', label: 'Finder', icon: <span className="demoIcon">F</span> },
-    { id: 'maps', label: 'Maps', icon: <span className="demoIcon">M</span> },
-    { id: 'messages', label: 'Messages', icon: <span className="demoIcon">S</span> },
-    { id: 'notes', label: 'Notes', icon: <span className="demoIcon">N</span> },
-    { id: 'safari', label: 'Safari', icon: <span className="demoIcon">W</span> },
-    { id: 'books', label: 'Books', icon: <span className="demoIcon">B</span> },
-  ]
+  const staticCards = Array.from({ length: 12 }, (_, index) => {
+    const cardNumber = index + 1
+    return {
+      id: `static_${cardNumber}`,
+      title: `Static card ${cardNumber}`,
+      body: 'Liquid Glass card',
+    }
+  })
 
   return (
     <div className="demo">
@@ -45,7 +46,6 @@ function App() {
             }}
             aria-label="Menu switcher"
           />
-          <LiquidGlassDock items={dockItems} />
           <LiquidGlassExpandableBox title="Read more" lines={5}>
             <p>
               Liquid Glass is a layered effect: a blurred backdrop, a subtle tint,
@@ -92,6 +92,12 @@ function App() {
               beatae. Laboriosam illo dolorum optio.
             </p>
           </LiquidGlassPopupBox>
+
+          <LiquidGlassStaticCards
+            direction="left-to-right"
+            items={staticCards}
+            listContainerClassName="demoListXContainer"
+          />
         </div>
       </div>
 

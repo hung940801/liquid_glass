@@ -121,6 +121,8 @@ export function LiquidGlassPopupBox({
         className={cx('lgPopup', className)}
         contentClassName={cx('lgPopup__content', contentClassName)}
         style={mergedStyle}
+        aria-hidden={isOpen}
+        data-lg-hidden={isOpen ? 'true' : 'false'}
       >
         {title && <div className="lgPopup__title">{title}</div>}
         <div className="lgPopup__text">{children}</div>

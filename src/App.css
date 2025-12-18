@@ -63,7 +63,7 @@
 }
 
 .demoListYContainer {
-  height: 800px;
+  height: 400px;
   overflow-y: auto;
   overflow-x: hidden;
   padding-right: 6px;
