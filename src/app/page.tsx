@@ -5,7 +5,6 @@ import { useState } from 'react'
 import styles from './page.module.css'
 
 import {
-  LiquidGlassDock,
   LiquidGlassDynamicCards,
   LiquidGlassExpandableBox,
   LiquidGlassMenu,
@@ -34,123 +33,129 @@ export default function Page() {
   })
 
   return (
-    <div className={styles.demo}>
-      <div className={styles.demo__top}>
-        <div className={styles.demo__stack}>
-          <div className={styles.demo__section}>
-            <span className={styles.demo__sectionTitle}>Menu</span>
-            <LiquidGlassMenu items={menuItems} orientation="horizontal" />
-            <LiquidGlassSwitcherMenu
-              width={1100}
-              options={menuItems.map(({ id, label }) => ({ id, label }))}
-              value={selectedMenuId}
-              onValueChange={(nextId) => {
-                setSelectedMenuId(nextId)
-                menuItems.find((item) => item.id === nextId)?.onSelect?.()
-              }}
-              aria-label="Menu switcher"
-            />
-          </div>
-          <div className={styles.demo__section}>
-            <span className={styles.demo__sectionTitle}>Expandable Box</span>
-            <LiquidGlassExpandableBox title="Read more" lines={5}>
-              <p>
-                Liquid Glass is a layered effect: a blurred backdrop, a subtle tint,
-                and specular highlights. This demo keeps the surface reusable while
-                letting you mix components like menus, switchers, and dynamic cards.
-              </p>
-              <p>
-                Click “Add card” in the lists below to see the split-style entrance
-                animation. The switcher menu above uses a moving selection pill inspired
-                by the CodePen switcher animation.
-              </p>
-              <p>
-                This expandable box starts collapsed, showing only a few lines, and
-                expands inline to reveal the full content without leaving the page.
-              </p>
-            </LiquidGlassExpandableBox>
-          </div>
+    <div className={styles.pageContainer}>
+      <div className={styles.demo}>
+        <div className={styles.demo__top}>
+          <div className={styles.demo__stack}>
+            <div className={styles.demo__section}>
+              <span className={styles.demo__sectionTitle}>Menu</span>
+              <LiquidGlassMenu items={menuItems} orientation="horizontal" />
+              <LiquidGlassSwitcherMenu
+                width={1100}
+                options={menuItems.map(({ id, label }) => ({ id, label }))}
+                value={selectedMenuId}
+                onValueChange={(nextId) => {
+                  setSelectedMenuId(nextId)
+                  menuItems.find((item) => item.id === nextId)?.onSelect?.()
+                }}
+                aria-label="Menu switcher"
+              />
+            </div>
+            <div className={styles.demo__section}>
+              <span className={styles.demo__sectionTitle}>Expandable Box</span>
+              <LiquidGlassExpandableBox title="Read more" lines={5}>
+                <p>
+                  Liquid Glass is a layered effect: a blurred backdrop, a subtle tint,
+                  and specular highlights. This demo keeps the surface reusable while
+                  letting you mix components like menus, switchers, and dynamic cards.
+                </p>
+                <p>
+                  Click “Add card” in the lists below to see the split-style entrance
+                  animation. The switcher menu above uses a moving selection pill inspired
+                  by the CodePen switcher animation.
+                </p>
+                <p>
+                  This expandable box starts collapsed, showing only a few lines, and
+                  expands inline to reveal the full content without leaving the page.
+                </p>
+              </LiquidGlassExpandableBox>
+            </div>
 
-          <div className={styles.demo__section}>
-            <span className={styles.demo__sectionTitle}>Popup Box</span>
-            <LiquidGlassPopupBox title="Long content" previewLines={5} openLabel="More">
-              <p>
-                This box previews like a “read more” card, but opens into a full-screen
-                overlay for longer content. The open button sits at the bottom-right,
-                and a close button fades in once the overlay finishes opening.
-              </p>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil dolore
-                reiciendis sunt neque, eaque impedit sed placeat, omnis incidunt
-                provident officia. Dicta odit soluta, vero optio molestiae porro
-                commodi minus.
-              </p>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis
-                beatae, incidunt, laudantium quae sequi ab itaque impedit fugiat,
-                deserunt iusto illo? Repudiandae, beatae. Sequi, similique.
-              </p>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa
-                voluptates at facilis quaerat illum, recusandae nesciunt iste
-                provident dolores, facere itaque amet. Suscipit rem totam, alias
-                quidem nihil incidunt.
-              </p>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero deserunt
-                corporis a ipsa natus quisquam minus dolor enim, sint, repellendus
-                beatae. Laboriosam illo dolorum optio.
-              </p>
-            </LiquidGlassPopupBox>
-          </div>
+            <div className={styles.demo__section}>
+              <span className={styles.demo__sectionTitle}>Popup Box</span>
+              <LiquidGlassPopupBox title="Long content" previewLines={5} openLabel="More">
+                <p>
+                  This box previews like a “read more” card, but opens into a full-screen
+                  overlay for longer content. The open button sits at the bottom-right,
+                  and a close button fades in once the overlay finishes opening.
+                </p>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil dolore
+                  reiciendis sunt neque, eaque impedit sed placeat, omnis incidunt
+                  provident officia. Dicta odit soluta, vero optio molestiae porro
+                  commodi minus.
+                </p>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis
+                  beatae, incidunt, laudantium quae sequi ab itaque impedit fugiat,
+                  deserunt iusto illo? Repudiandae, beatae. Sequi, similique.
+                </p>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa
+                  voluptates at facilis quaerat illum, recusandae nesciunt iste
+                  provident dolores, facere itaque amet. Suscipit rem totam, alias
+                  quidem nihil incidunt.
+                </p>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero deserunt
+                  corporis a ipsa natus quisquam minus dolor enim, sint, repellendus
+                  beatae. Laboriosam illo dolorum optio.
+                </p>
+              </LiquidGlassPopupBox>
+            </div>
 
-          <div className={styles.demo__section}>
-            <span className={styles.demo__sectionTitle}>Carousel</span>
-            <LiquidGlassStaticCards
-              direction="left-to-right"
-              items={staticCards}
-              listContainerClassName={styles.demoListXContainer}
-            />
-          </div>
-        </div>
-      </div>
-
-      <div className={styles.demoLists}>
-        <span className={styles.demo__sectionTitle}>Dynamic Card Lists</span>
-        <div className={styles.demoLists__cols}>
-          <div className={styles.demoLists__panel}>
-            <div className={styles.demoLists__heading}>Add to bottom</div>
-            <LiquidGlassDynamicCards
-              listContainerClassName={styles.demoListYContainer}
-              autoScrollOnAdd
-            />
-          </div>
-          <div className={styles.demoLists__panel}>
-            <div className={styles.demoLists__heading}>Add to top</div>
-            <LiquidGlassDynamicCards
-              direction="bottom-to-top"
-              listContainerClassName={styles.demoListYContainer}
-              autoScrollOnAdd
-            />
+            <div className={styles.demo__section}>
+              <span className={styles.demo__sectionTitle}>Carousel</span>
+              <LiquidGlassStaticCards
+                direction="left-to-right"
+                items={staticCards}
+                listContainerClassName={styles.demoListXContainer}
+              />
+            </div>
           </div>
         </div>
 
-        <div className={styles.demoLists__rows}>
-          <div className={`${styles.demoLists__panel} ${styles['demoLists__panel--wide']}`}>
-            <div className={styles.demoLists__heading}>Add to right</div>
-            <LiquidGlassDynamicCards
-              direction="left-to-right"
-              listContainerClassName={styles.demoListXContainer}
-              autoScrollOnAdd
-            />
+        <div className={styles.demoLists}>
+          <span className={styles.demo__sectionTitle}>Dynamic Card Lists</span>
+          <div className={styles.demoLists__cols}>
+            <div className={styles.demoLists__panel}>
+              <div className={styles.demoLists__heading}>Add to bottom</div>
+              <LiquidGlassDynamicCards
+                listContainerClassName={styles.demoListYContainer}
+                autoScrollOnAdd
+              />
+            </div>
+            <div className={styles.demoLists__panel}>
+              <div className={styles.demoLists__heading}>Add to top</div>
+              <LiquidGlassDynamicCards
+                direction="bottom-to-top"
+                listContainerClassName={styles.demoListYContainer}
+                autoScrollOnAdd
+              />
+            </div>
           </div>
-          <div className={`${styles.demoLists__panel} ${styles['demoLists__panel--wide']}`}>
-            <div className={styles.demoLists__heading}>Add to left</div>
-            <LiquidGlassDynamicCards
-              direction="right-to-left"
-              listContainerClassName={styles.demoListXContainer}
-              autoScrollOnAdd
-            />
+
+          <div className={styles.demoLists__rows}>
+            <div
+              className={`${styles.demoLists__panel} ${styles['demoLists__panel--wide']}`}
+            >
+              <div className={styles.demoLists__heading}>Add to right</div>
+              <LiquidGlassDynamicCards
+                direction="left-to-right"
+                listContainerClassName={styles.demoListXContainer}
+                autoScrollOnAdd
+              />
+            </div>
+            <div
+              className={`${styles.demoLists__panel} ${styles['demoLists__panel--wide']}`}
+            >
+              <div className={styles.demoLists__heading}>Add to left</div>
+              <LiquidGlassDynamicCards
+                direction="right-to-left"
+                listContainerClassName={styles.demoListXContainer}
+                autoScrollOnAdd
+              />
+            </div>
           </div>
         </div>
       </div>

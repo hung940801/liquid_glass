@@ -1,9 +1,18 @@
 # Liquid Glass Components (React)
 
-Reusable “liquid glass” UI primitives/components.
+Reusable “liquid glass” UI primitives/components inspired by Apple’s “Liquid Glass” look (blur + tint + specular highlights + subtle SVG distortion).
 
 - Source: `src/liquid-glass/*`
 - Stylesheet: `src/liquid-glass/liquid-glass.css`
+
+## Description
+
+This repo contains a small component set + demo showcasing:
+
+- `LiquidGlassSurface` (the base glass layer)
+- Menu + switcher menu (animated selection pill)
+- Cards (static + dynamic “split-in” entrance)
+- Expandable “read more” box + popup box
 
 ## Demo (this repo)
 
@@ -12,7 +21,8 @@ The demo app lives in Next.js App Router:
 - Page: `src/app/page.tsx`
 - Page styles: `src/app/page.module.css`
 - Global styles: `src/app/globals.css`
-- Background videos: `public/jungle.mp4`, `public/blurred_color_bg.mp4`
+- Background image: `public/jungle.jpg`
+- CodePen demo: https://codepen.io/cyrus-chau/pen/MYyNEea
 
 ## Usage (in this repo)
 
@@ -38,10 +48,9 @@ UI inspiration (CodePen):
 - https://codepen.io/lucasromerodb/pen/vEOWpYM
 - https://codepen.io/DenDionigi/pen/JodwNzX
 
-Background videos (Vecteezy):
+Background image (Unsplash):
 
-- Waterfall: https://www.vecteezy.com/video/46747921-revealed-small-waterfall-in-lush-foliage-tropical-rainforest-under-sunlight-in-rainy-season-exploration-and-hiking-trip-in-the-wild-water-flowing-over-the-rocks-from-cascade-in-the-jungle
-- Blurred gradient: https://www.vecteezy.com/video/11678465-colorful-abstract-blurred-gradient-background-moving-abstract-blurred-background-rainbow-gradient-loopable-background-animation
+- Photo by <a href="https://unsplash.com/@chrisabney?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Chris Abney</a> on <a href="https://unsplash.com/photos/area-covered-with-green-leafed-plants-qLW70Aoo8BE?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
 ## Dev
 
