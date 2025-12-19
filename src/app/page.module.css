@@ -1,5 +1,13 @@
+.pageContainer {
+  width: 1100px;
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-start;
+}
+
 .demo {
-  width: min(1100px, 100%);
+  width: 100%;
   padding: 3rem 1.5rem;
   display: flex;
   flex-direction: column;
@@ -124,4 +132,3 @@
     grid-template-columns: 1fr;
   }
 }
-

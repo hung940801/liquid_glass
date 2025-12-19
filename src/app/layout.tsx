@@ -13,16 +13,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="en">
       <body>
         <div className="appBg" aria-hidden="true">
-          <video
-            className="appBg__video"
-            autoPlay
-            loop
-            muted
-            playsInline
-            preload="auto"
-          >
-            <source src="/jungle.mp4" type="video/mp4" />
-          </video>
+          <img className="appBg__image" src="/jungle.jpg" alt="" />
           <div className="appBg__overlay" />
         </div>
         {children}
